@@ -6,31 +6,38 @@ class Demo{
 		char ary1 [] = str1.toCharArray();
 		char ary2 [] = str2.toCharArray();
 		int ans = -1;
-		for(int i=0;i<ary1.length;i++){
+		boolean isAns = false;
+		if(str1.equals(str2)){
 
-			for(int j=0;j<ary2.length;j++){
+			ans = 0;
+		}else{
 
-				if(ary1.length == ary2.length){
+			for(int i=0;i<ary1.length;i++){
 
-					if(ary1[i] == ary2[j]) {
+				for(int j=i;j<ary2.length;j++){
 
-						ans = 0;			
+					int num1 = ary1[i];
+					int num2 = ary2[j];
+					if(ary1.length == ary2.length){
+
+						if(num1 == num2) {
+
+							ans = 0;			
+						}else{
+							
+							isAns = true;
+							ans = num1 - num2;
+							break;
+						}
 					}else{
-
-						ans = ary1[i] - ary2[j];
-						break;
+				
+						ans = ary1.length - ary2.length;
 					}
-				}else{
+				}
+				if(isAns){
 
-					if(ary1[i] == ary2[j]){
-
-						ans = 0;
-					}else{
-
-						ans = ary1[i] - ary2[j];
-						break;
-					}
-				}	
+					break;
+				}
 			}
 		}
 		return ans;

@@ -8,13 +8,9 @@ class Demo{
 		System.out.println(sb.capacity());
 		sb = sb.append("GoodGame");
 		System.out.println(sb.capacity());
-		sb = sb.append("ZaleKaJ1");
-		System.out.println(sb.capacity());
-		sb = sb.append("MgAtta");
-		System.out.println(sb.capacity());
-		sb = sb.append("TheWay");
-		System.out.println(sb.capacity());
 
+		StringBuffer sb2 = new StringBuffer("ECcentricOG");
+		System.out.println(sb2.capacity());
 		System.out.println(sb.length());
 	}
 }
